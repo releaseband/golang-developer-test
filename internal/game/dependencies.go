@@ -12,4 +12,5 @@ type Calculator interface {
 
 type Generator interface {
 	Generate(rng rng.RNG) (symbols.Reels, error)
+	GetReelSymbols(reelIndex int, rowIndex int) symbols.Symbols
 }
