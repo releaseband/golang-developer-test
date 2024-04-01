@@ -17,6 +17,10 @@ func NewPayTable(symbolPayouts map[symbols.Symbol]Payout) *PayTable {
 }
 
 func (p *PayTable) Get(s symbols.Symbol, index int) (uint64, error) {
-	// todo: implement me
-	return 0, nil
+	var payout uint64
+	if payouts, ok := p.symbolPayouts[s]; ok {
+		payout = payouts[index]
+	}
+
+	return payout, nil
 }
