@@ -31,7 +31,7 @@ func (s *Symbols) Generate(rng rng.RNG) (symbols.Reels, error) {
 			}
 
 			for shift := indx + 1; len(reels[i]) != len(tape); shift++{
-				shift = shift % len(tape) - 1
+				shift = shift % len(tape)
 				if ok := indices[shift]; !ok {
 					indices[shift] = true
 					reels[i] = append(reels[i], tape[shift])
